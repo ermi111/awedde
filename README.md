@@ -43,15 +43,15 @@ npm install awedde
 ```javascript
 
 // Import the whole Awedde modules
-const Awedde = require('awedde')
+import * as awedde from "awedde";
 
 // Import Awedde modules as needed
-const domUtil = require('awedde/dom');
-const formUtil = require('awedde/form');
-const mediaUtil = require('awedde/media');
-const networkUtil = require('awedde/network');
-const securityUtil = require('awedde/security');
-const deviceUtil = require('awedde/device');
+import dom from "awedde";
+import form from "awedde";
+import media from "awedde";
+import network from "awedde";
+import security from "awedde";
+import device from "awedde";
 
 // Use Awedde utility functions here
 ```
