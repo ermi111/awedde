@@ -1,8 +1,8 @@
-# Spark - Version 1.0.0
+# Awedde - Version 1.0.0
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://npmjs.com/package/spark)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://npmjs.com/package/awedde)
 
-Spark is a versatile collection of utility classes developed to simplify various tasks. It covers a wide range of functionalities, including DOM manipulation, form validation, media handling, network and security operations, and device detection; And other related tasks.
+Awedde is a versatile collection of utility classes developed to simplify various tasks. It covers a wide range of functionalities, including DOM manipulation, form validation, media handling, network and security operations, and device detection; And other related tasks.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ Spark is a versatile collection of utility classes developed to simplify various
 
 ## Introduction
 
-Spark is designed to be a comprehensive toolkit, offering utility classes for different aspects of web development. Whether you need to manipulate the DOM, validate forms, handle media, perform network operations, or detect devices, Spark has you covered.
+Awedde is designed to be a comprehensive toolkit, offering utility classes for different aspects of web development. Whether you need to manipulate the DOM, validate forms, handle media, perform network operations, or detect devices, Awedde has you covered.
 
 ## Features
 
@@ -30,33 +30,33 @@ Spark is designed to be a comprehensive toolkit, offering utility classes for di
 
 ## Getting Started
 
-To get started with Spark, follow the steps below.
+To get started with Awedde, follow the steps below.
 
 ## Installation
 
 ```bash
-npm install Spark
+npm install awedde
 ```
 
 ## Usage
 
 ```javascript
 
-// Import the whole Spark modules
-const spark = require('spark')
+// Import the whole Awedde modules
+const Awedde = require('awedde')
 
-// Import Spark modules as needed
-const domUtil = require('spark/dom');
-const formUtil = require('spark/form');
-const mediaUtil = require('spark/media');
-const networkUtil = require('spark/network');
-const securityUtil = require('spark/security');
-const deviceUtil = require('spark/device');
+// Import Awedde modules as needed
+const domUtil = require('awedde/dom');
+const formUtil = require('awedde/form');
+const mediaUtil = require('awedde/media');
+const networkUtil = require('awedde/network');
+const securityUtil = require('awedde/security');
+const deviceUtil = require('awedde/device');
 
-// Use Spark utility functions here
+// Use Awedde utility functions here
 ```
 ## Modules
-Spark is organized into the following modules:
+Awedde is organized into the following modules:
 
 dom: DOM manipulation utilities.
 
@@ -73,9 +73,9 @@ device: Device detection and device-related tasks.
 Examples and documentations are available inline with the code.
 
 ## Contributing
-I welcome contributions from the community. If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request. You can refer the following steps to contribute to spark
+I (Ermiyas Arage) welcome contributions from the community. If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
 ## License
 This project is licensed under the Apache-2.0 - see the [LICENSE](LICENSE) file for details.
 
-Thank you for choosing Spark! I hope it simplifies your development tasks. If you have any questions or feedback, please reach out to me through [Telegram](https://t.me/ermiyasarage).
+Thank you for choosing Awedde! I hope it simplifies your development tasks and relief stress. If you have any questions or feedback, please reach out to me through [Telegram](https://t.me/ermiyasarage).
