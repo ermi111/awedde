@@ -12,7 +12,16 @@
     "url": "git+https://github.com/ermi111/spark.git"
   },
   "keywords": [
-    "spark"
+    "spark",
+    "Spark",
+    "DOM manipulation",
+    "Device detection",
+    "Media handling",
+    "Form validation",
+    "Network operation",
+    "Security",
+    "Spark",
+    "Utility kit"
   ],
   "author": "Ermiyas Arage <ermiyasarage2023@gmail.com>",
   "license": "Apache-2.0",
