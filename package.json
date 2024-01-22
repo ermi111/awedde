@@ -2,10 +2,15 @@
   "name": "awedde",
   "version": "1.0.0",
   "description": "A collection of utility classes for handling various tasks, including DOM manipulation, form validation (and from related tasks), media handling, network and security operations, and device detection (and device related tasks).",
-  "main": "index.js",
-  "module": "index.js",
+  "module": "src/index.js",
+  "main": "dist/index.js",
+  "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
