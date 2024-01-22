@@ -1,5 +1,5 @@
 {
-  "name": "spark",
+  "name": "awedde",
   "version": "1.0.0",
   "description": "A collection of utility classes for handling various tasks, including DOM manipulation, form validation (and from related tasks), media handling, network and security operations, and device detection (and device related tasks).",
   "main": "index.js",
@@ -9,24 +9,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ermi111/spark.git"
+    "url": "git+https://github.com/ermi111/awedde.git"
   },
   "keywords": [
-    "spark",
-    "Spark",
+    "awedde",
+    "Awedde",
     "DOM manipulation",
     "Device detection",
     "Media handling",
     "Form validation",
     "Network operation",
     "Security",
-    "Spark",
+    "awedde",
     "Utility kit"
   ],
   "author": "Ermiyas Arage <ermiyasarage2023@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ermi111/spark/issues"
+    "url": "https://github.com/ermi111/awedde/issues"
   },
-  "homepage": "https://github.com/ermi111/spark#readme"
+  "homepage": "https://github.com/ermi111/awedde#readme"
 }
