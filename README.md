@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/ermi111/awedde/wiki)
 
 <p align="center" style="border-radius: 20px;">
-    <img src="logo/logo-wide.png" alt="Awedde-logo">
+    <img src="logo/github.png" alt="Awedde-logo">
 </p>
 
 
