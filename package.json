@@ -5,8 +5,15 @@
   "main": "dist/index.js",
   "module": "src/index.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./dist/index.js" 
+    },
+    "default": "./dist/index.js"
+  },
   "scripts": {
-    "build": "babel src --out-dir dist"
+    "build": "esbuild src/**/**/*.js --outdir=dist --format=cjs"
   },
   "repository": {
     "type": "git",
@@ -29,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/ermi111/awedde/issues"
   },
-  "homepage": "https://github.com/ermi111/awedde#readme"
+  "homepage": "https://github.com/ermi111/awedde#readme",
+  "devDependencies": {
+    "esbuild": "^0.19.12"
+  }
 }
