@@ -340,4 +340,35 @@ export class ClassUtility {
         });
     }
     
+    /**
+     * Toggles a class on an element based on network connection status change.
+     * @param {HTMLElement} element - The target element.
+     * @param {string} className - The class name to toggle.
+     */
+    static toggleClassOnConnectionStatus(element, className) {
+        const handleConnectionChange = () => {
+            const isOnline = navigator.onLine;
+            ClassUtility.toggleClass(element, className, isOnline);
+        };
+
+        window.addEventListener('online', handleConnectionChange);
+        window.addEventListener('offline', handleConnectionChange);
+        handleConnectionChange();
+    }
+    
+    /**
+     * Toggles a class when the geolocation changes.
+     * @param {HTMLElement} element - The target element.
+     * @param {string} className - The class name to toggle.
+     */
+    static toggleClassOnGeolocationChange(element, className) {
+        navigator.geolocation.watchPosition(
+            (position) => {
+                ClassUtility.toggleClass(element, className);
+            },
+            (error) => {
+                console.error(error);
+            }
+        );
+    }
 }

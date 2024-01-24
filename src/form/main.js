@@ -226,7 +226,6 @@ export class FormAction {
  * Utility class to serialize a form data or deserialize
  * @class
  */
-
 export class SerializeForm {
     /**
      * Serialize form data into a URL-encoded string.
