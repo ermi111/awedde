@@ -1,6 +1,11 @@
 # Awedde - Version 1.0.0
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://npmjs.com/package/awedde)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/ermi111/awedde/wiki)
+
+<p align="center" style="border-radius: 20px;">
+    <img src="logo/logo-wide.png" alt="Awedde-logo">
+</p>
+
 
 Awedde is a versatile collection of utility classes developed to simplify various tasks. It covers a wide range of functionalities, including DOM manipulation, form validation, media handling, network and security operations, and device detection; And other related tasks.
 
