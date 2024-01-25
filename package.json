@@ -2,16 +2,8 @@
   "name": "awedde",
   "version": "1.0.0",
   "description": "A collection of utility classes for handling various tasks, including DOM manipulation, form validation (and from related tasks), media handling, network and security operations, and device detection (and device related tasks).",
-  "main": "dist/index.js",
-  "module": "src/index.js",
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./src/index.js",
-      "require": "./dist/index.js"
-    },
-    "default": "./dist/index.js"
-  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "esbuild src/**/**/*.js --outdir=dist --format=cjs"
   },
@@ -21,7 +13,6 @@
   },
   "keywords": [
     "awedde",
-    "Awedde",
     "DOM manipulation",
     "Device detection",
     "Media handling",

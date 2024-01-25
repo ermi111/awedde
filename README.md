@@ -1,3 +1,7 @@
+# Awedde version 1.0.1
+
+Typescript declaration included. The rest kept well!!!
+
 # Awedde - Version 1.0.0
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/ermi111/awedde/wiki)
@@ -47,17 +51,16 @@ npm install awedde
 ```javascript
 
 // Import the whole Awedde modules
-import awedde from "awedde";
-
-// Import Awedde modules as needed
-import dom from "awedde";
-import form from "awedde";
-import media from "awedde";
-import network from "awedde";
-import device from "awedde";
+const awedde = require("awedde");
 
 // Use Awedde utility functions here
+const main = awedde.default // Use the desired function accordingly, default is required
+
+// For example
+const main = wedde.default.device.DetectDevice.detectBrowser(); // to detect browser type
+console.log(main);
 ```
+
 ## Modules
 Awedde is organized into the following modules:
 dom: DOM manipulation utilities.
