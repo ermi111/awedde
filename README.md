@@ -1,10 +1,11 @@
-# Awedde version 1.0.1
+# Awedde version 1.0.2
 
+ESmodule support and bug fix!!!
 Typescript declaration included. The rest kept well!!!
 
 # Awedde - Version 1.0.0
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/ermi111/awedde/wiki)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/ermi111/awedde/releases/tag/v1.0.0)
 
 <p align="center" style="border-radius: 20px;">
     <img src="logo/github.png" alt="Awedde-logo">
@@ -49,7 +50,23 @@ npm install awedde
 ## Usage
 
 ```javascript
+// ESmodule
+// Import the whole Awedde modules
+import awedde from "awedde";
 
+// Import the Awedde modules as needed
+import dom from "awedde";
+import device from "awedde";
+import form from "awedde";
+import media from "awedde";
+import network from "awedde";
+
+const main = awedde.device.DetectDevice.detectOS(); // to detect OS
+console.log(main);
+```
+
+```javascript
+// Common js
 // Import the whole Awedde modules
 const awedde = require("awedde");
 
@@ -57,7 +74,7 @@ const awedde = require("awedde");
 const main = awedde.default // Use the desired function accordingly, default is required
 
 // For example
-const main = wedde.default.device.DetectDevice.detectBrowser(); // to detect browser type
+const main = awedde.default.device.DetectDevice.detectBrowser(); // to detect browser type
 console.log(main);
 ```
 
