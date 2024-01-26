@@ -1,11 +1,18 @@
 {
   "name": "awedde",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A collection of utility classes for handling various tasks, including DOM manipulation, form validation (and from related tasks), media handling, network and security operations, and device detection (and device related tasks).",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "type": "module",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
   "scripts": {
-    "build": "esbuild src/**/**/*.js --outdir=dist --format=cjs"
+    "build": "esbuild --format=esm --outdir=dist --sourcemap src/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +37,8 @@
   },
   "homepage": "https://github.com/ermi111/awedde#readme",
   "devDependencies": {
-    "esbuild": "^0.19.12"
+    "esbuild": "^0.19.12",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
   }
 }
