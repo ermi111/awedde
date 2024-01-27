@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "ES5",
+    "module": "ESNext", 
+    "outDir": "./dist/esm",
     "allowJs": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "checkJs": true,
+    "strict": true,
     "declaration": true,
-    "outDir": "./dist/esm"
+    "esModuleInterop": true
   },
-  "include": ["src/**/**/*.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/**/*.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
