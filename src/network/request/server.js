@@ -29,8 +29,48 @@ export class RequestServer {
     /**
      * Makes an AJAX request with the provided options.
      * @param {Object} options - The options for the AJAX request.
+     * @param {string} options.method - The HTTP method for the request (e.g., 'GET', 'POST').
+     * @param {string} options.url - The URL to make the request to.
+     * @param {Object} [options.headers] - Additional headers to include in the request.
+     * @param {string|FormData} [options.data] - The data to include in the request body.
+     * @param {function} [options.success] - Callback function to handle a successful response.
+     * @param {function} [options.error] - Callback function to handle an error response.
      */
-    static ajax(options) {}
+    static ajax(options) {
+        const xhr = new XMLHttpRequest();
+    
+        xhr.open(options.method, options.url, true);
+    
+        // Set custom headers if provided
+        if (options.headers) {
+            for (const [key, value] of Object.entries(options.headers)) {
+                xhr.setRequestHeader(key, value);
+            }
+        }
+  
+        // Set up callback for successful response
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                if (options.success) {
+                    options.success(xhr.responseText);
+                }
+            } else {
+                if (options.error) {
+                    options.error(`Request failed with status ${xhr.status}`);
+                }
+            }
+        };
+  
+        // Set up callback for error response
+        xhr.onerror = function () {
+            if (options.error) {
+                options.error('Request failed');
+            }
+        };
+  
+        // Send the request with the provided data
+        xhr.send(options.data);
+    }
 
     /**
      * Makes a GET request.
