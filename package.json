@@ -12,7 +12,7 @@
     }
   },
   "scripts": {
-    "build": "esbuild --format=esm --outdir=dist --sourcemap src/**/*.js"
+    "build": "esbuild --format=esm --outdir=dist/esm --sourcemap src/**/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -35,10 +35,5 @@
   "bugs": {
     "url": "https://github.com/ermi111/awedde/issues"
   },
-  "homepage": "https://github.com/ermi111/awedde#readme",
-  "devDependencies": {
-    "esbuild": "^0.19.12",
-    "webpack": "^5.90.0",
-    "webpack-cli": "^5.1.4"
-  }
+  "homepage": "https://github.com/ermi111/awedde#readme"
 }
