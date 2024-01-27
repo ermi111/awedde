@@ -32,19 +32,22 @@ export class DetectDevice {
      */
     static detectBrowser() {
         const userAgent = navigator.userAgent.toLowerCase();
-        if (userAgent.includes('chrome')) {
+
+        if (userAgent.includes('chrome') && !userAgent.includes('edge')) {
             return 'Chrome';
         } else if (userAgent.includes('firefox')) {
             return 'Firefox';
-        } else if (userAgent.includes('safari')) {
+        } else if (userAgent.includes('safari') && !userAgent.includes('chrome')) {
             return 'Safari';
-        } else if (userAgent.includes('edge')) {
+        } else if (userAgent.includes('edge') || userAgent.includes('edg')) {
             return 'Edge';
-        } else if (userAgent.includes('opera') || userAgent.includes('opr/')) {
+        } else if (userAgent.includes('msie') || userAgent.includes('trident')) {
+            return 'IE';
+        } else if (userAgent.includes('opera') || userAgent.includes('opr')) {
             return 'Opera';
-        } else {
-            return 'Unknown Browser';
         }
+      
+        return 'Unknown Browser type!';
     }
 
     /**
@@ -52,16 +55,30 @@ export class DetectDevice {
      * @returns {string} - The detected operating system.
      */
     static detectOS() {
-        const platform = navigator.platform.toLowerCase();
-        if (platform.includes('win')) {
+        const userAgent = navigator.userAgent.toLowerCase();
+
+        if (userAgent.includes('win')) {
             return 'Windows';
-        } else if (platform.includes('mac')) {
-            return 'Mac OS';
-        } else if (platform.includes('linux')) {
+        } else if (userAgent.includes('mac')) {
+            return 'Mac';
+        } else if (userAgent.includes('linux')) {
             return 'Linux';
-        } else {
-            return 'Unknown OS';
+        } else if (userAgent.includes('iphone') || userAgent.includes('ipad')) {
+            return 'iOS';
+        } else if (userAgent.includes('android')) {
+            return 'Android';
         }
+      
+        return 'Unknown OS';
+    }
+
+    /**
+     * Detects whether the browser is running in a mobile environment.
+     * @returns {boolean} - True if the browser is in a mobile environment, false otherwise.
+     */
+    static isMobileBrowser() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
     }
 
     /**
