@@ -1,6 +1,6 @@
 {
   "name": "awedde",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A collection of utility classes for handling various tasks, including DOM manipulation, form validation (and from related tasks), media handling, network and security operations, and device detection (and device related tasks).",
   "main": "dist/cjs/index.js",
   "type": "module",

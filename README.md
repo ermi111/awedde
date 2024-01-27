@@ -1,7 +1,9 @@
-# Awedde version 1.0.2
+# Awedde version 1.0.3
 
-ESmodule support and bug fix!!!
-Typescript declaration included. The rest kept well!!!
+- Validation upgrade, with enhanced capabilities.
+- Server request update and device storage class.
+- Browser storage manipulation.
+- Working with URL made easy.
 
 # Awedde - Version 1.0.0
 
