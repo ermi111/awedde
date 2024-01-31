@@ -110,24 +110,102 @@ export class Validate {
     }
 
     /**
-     * Validates a one-time password (OTP).
-     * @param {string} otp - The OTP to validate.
-     * @param {Object} options - Options for OTP validation (e.g., length).
-     * @returns {boolean} - True if the OTP is valid, false otherwise.
+     * Validates a One-Time Password (OTP) entered by the user.
+     *
+     * @param {string} userOTP - The OTP entered by the user for validation.
+     * @param {string} storedOTP - The predefined OTP stored for comparison.
+     * @param {number} [expirationTime=5] - The expiration time for the OTP in minutes.
+     * @param {number} [maxAttempts=3] - The maximum allowed attempts for OTP validation.
+     *
+     * @returns {Object} An object containing the validation result.
+     * @property {boolean} success - Indicates whether the OTP validation was successful.
+     * @property {string} message - A message providing information about the validation result.
      */
-    static validateOTP(otp, options) {
-        const { length = 6 } = options;
-        const otpRegex = new RegExp(`^[0-9]{${length}}$`);
-        return otpRegex.test(otp);
+    static validateOTP(userOTP, storedOTP, expirationTime = 5, maxAttempts = 3) {
+        const now = new Date().getTime();
+        const storedOTPDetails = JSON.parse(localStorage.getItem('otpDetails')) || {};
+      
+        // Check if the user has exceeded the maximum attempts
+        if (storedOTPDetails.attempts >= maxAttempts) {
+            return {
+                success: false,
+                message: 'Maximum attempts exceeded. Please try again later.',
+            };
+        }
+      
+        // Check if the OTP has expired
+        if (storedOTPDetails.timestamp && now - storedOTPDetails.timestamp > expirationTime * 60 * 1000) {
+            return {
+                success: false,
+                message: 'OTP has expired. Please request a new one.',
+            };
+        }
+      
+        // Check if the entered OTP matches the stored OTP
+        if (userOTP === storedOTP) {
+            // Reset attempts and timestamp on successful validation
+            localStorage.setItem('otpDetails', JSON.stringify({ attempts: 0, timestamp: null }));
+            return {
+                success: true,
+                message: 'OTP validated successfully!',
+            };
+        } else {
+            // Increment attempts on unsuccessful validation
+            storedOTPDetails.attempts = (storedOTPDetails.attempts || 0) + 1;
+            storedOTPDetails.timestamp = now;
+            localStorage.setItem('otpDetails', JSON.stringify(storedOTPDetails));
+        
+            return {
+                success: false,
+                message: 'Invalid OTP. Please try again.',
+            };
+        }
     }
 
     /**
-     * Validates a token.
-     * @param {string} token - The token to validate.
-     * @returns {boolean} - True if the token is valid, false otherwise.
+     * Validates a JSON Web Token (JWT) entered by the user.
+     * @param {string} userToken - The JWT entered by the user for validation.
+     * @param {string} secretKey - The secret key used to sign the JWT.
+     *
+     * @returns {Object} An object containing the validation result.
+     * @property {boolean} success - Indicates whether the JWT validation was successful.
+     * @property {Object|null} payload - The decoded payload of the JWT (if successful).
+     * @property {string} message - A message providing information about the validation result.
      */
-    static validateToken(token) {
-        return typeof token === 'string' && token.length > 0;
+    static validateJWT(userToken, secretKey) {
+        const tokenParts = userToken.split('.');
+        if (tokenParts.length !== 3) {
+            return {
+                success: false,
+                payload: null,
+                message: 'Invalid JWT format. Please try again.',
+            };
+        }
+    
+        const [headerBase64, payloadBase64, signature] = tokenParts;
+    
+        try {
+            // Decode the payload without verification
+            const decodedPayload = JSON.parse(atob(payloadBase64));
+        
+            // Manually verify the signature (this is a simplified example)
+            const calculatedSignature = btoa(JSON.stringify(decodedPayload) + secretKey);
+            if (calculatedSignature !== signature) {
+                throw new Error('Invalid signature');
+            }
+    
+            return {
+                success: true,
+                payload: decodedPayload,
+                message: 'JWT validated successfully!',
+            };
+        } catch (error) {
+            return {
+                success: false,
+                payload: null,
+                message: 'Invalid JWT. Please try again.',
+            };
+        }
     }
 
     /**
