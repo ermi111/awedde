@@ -58,14 +58,14 @@ npm install awedde
 ```javascript
 // Use ESmodule in browser
 // Import the whole Awedde modules
-import awedde from "./path/to/your/awedde-package/awedde.js";
+import awedde from "./path/to/your/awedde-package/dist/index.js";
 
 // Import the Awedde modules as needed
-import dom from "./path/to/your/awedde-package/awedde.js";
-import device from "./path/to/your/awedde-package/awedde.js";
-import form from "./path/to/your/awedde-package/awedde.js";
-import media from "./path/to/your/awedde-package/awedde.js";
-import network from "./path/to/your/awedde-package/awedde.js";
+import dom from "./path/to/your/awedde-package/dist/index.js";
+import device from "./path/to/your/awedde-package/dist/index.js";
+import form from "./path/to/your/awedde-package/dist/index.js";
+import media from "./path/to/your/awedde-package/dist/index.js";
+import network from "./path/to/your/awedde-package/dist/index.js";
 
 const main = awedde.device.DetectDevice.detectOS(); // to detect OS
 console.log(main);
@@ -73,7 +73,7 @@ console.log(main);
 
 ```HTML 
 <!-- In you html head tag -->
-<script type="module" src="./path/to/your/awedde-package/awedde.js"></script>
+<script type="module" src="./path/to/your/awedde-package/dist/index.js"></script>
 
 <!-- Now use awedde in you body script tag! -->
 
