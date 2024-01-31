@@ -1,26 +1,16 @@
 {
   "name": "awedde",
-  "version": "1.0.3",
-  "description": "A collection of utility classes for handling various tasks, including DOM manipulation, form validation (and from related tasks), media handling, network and security operations, and device detection (and device related tasks).",
-  "main": "dist/cjs/index.js",
+  "version": "1.0.4",
+  "description": "A collection of utility classes for handling various tasks, including DOM manipulation, form validation (and from related tasks), media handling, network and security operations, and device detection (and device related tasks). Made for browser environment.",
   "type": "module",
-  "types": "./dist/esm/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
-    }
-  },
-  "scripts": {
-    "build": "esbuild --format=esm --outdir=dist/esm --sourcemap src/**/**/*.js"
-  },
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ermi111/awedde.git"
   },
   "keywords": [
     "awedde",
-    "Ermiyas",
     "DOM manipulation",
     "Device detection",
     "Media handling",
