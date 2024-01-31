@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*
  *Copyright (c) 2023 Awedde
  *
@@ -20,6 +21,7 @@
  * @license Apache-2.0
  */
 
+import { DetectFeature } from "./features.js";
 
 /**
  * Utility class for retrieving various user environment information.
@@ -53,7 +55,7 @@ export class EnvInfo {
      * @param {Function} callback - The callback function to receive the battery status.
      */
     static getBatteryStatus(callback) {
-        if ('getBattery' in navigator) {
+        if (DetectFeature.detectBatteryAPI()) {
             navigator.getBattery().then((battery) => {
                 callback({
                     level: battery.level,
@@ -84,7 +86,7 @@ export class EnvInfo {
      * @param {Function} callback - The callback function to receive the device orientation.
      */
     static getDeviceOrientation(callback) {
-        if ('DeviceOrientationEvent' in window) {
+        if (DetectFeature.detectOrientationAPI()) {
             window.addEventListener('deviceorientation', (event) => {
                 callback({
                     alpha: event.alpha,
@@ -168,7 +170,7 @@ export class EnvInfo {
      * @param {Function} callback - The callback function to receive the geolocation.
      */
     static getGeolocation(callback) {
-        if ('geolocation' in navigator) {
+        if (DetectFeature.detectGeolocationAPI()) {
             navigator.geolocation.getCurrentPosition((position) => {
                 callback({
                     latitude: position.coords.latitude,
