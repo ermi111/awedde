@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ESNext",
     "module": "ESNext", 
-    "outDir": "./dist/esm",
+    "outDir": "./dist",
     "allowJs": true,
-    "checkJs": true,
-    "strict": true,
     "declaration": true,
     "esModuleInterop": true
   },
