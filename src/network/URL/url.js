@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*
  *Copyright (c) 2023 Awedde
  *
@@ -24,7 +25,7 @@
  * Utility class for working with URLs.
  * @class
  */
-export class URL {
+export class URLAwedde {
     /**
      * Parses a query string and returns an object containing the parameters.
      *
@@ -162,15 +163,29 @@ export class URL {
     }
 
     /**
-     * Merges a base URL with a relative URL.
+     * Merges two URLs by combining their components.
+     *
      * @param {string} baseURL - The base URL.
-     * @param {string} relativeURL - The relative URL.
-     * @returns {string} - The merged URL.
+     * @param {string} relativeURL - The relative URL to be merged with the base URL.
+     *
+     * @returns {string} The merged URL.
      */
     static mergeURL(baseURL, relativeURL) {
-        const urlObject = new URL(relativeURL, baseURL);
-        return urlObject.toString();
+        // Ensure baseURL is a valid absolute URL
+        const base = new URL(baseURL);
+    
+        // Ensure relativeURL is a valid relative or absolute URL
+        const relative = new URL(relativeURL, base);
+    
+        // Preserve the original query parameters in the relative URL
+        relative.search = relative.search || base.search;
+    
+        // Preserve the original hash/fragment in the relative URL
+        relative.hash = relative.hash || base.hash;
+    
+        return relative.href;
     }
+  
 
     /**
      * Parses a URL into an object.
