@@ -1,4 +1,4 @@
-import { URL } from "./URL/url.js";
+import { URLAwedde } from "./URL/url.js";
 import { RequestServer } from "./request/server.js";
 import { IP } from "./ip/ip.js";
 import { WebWorker } from "./webWorker/webWorker.js";
@@ -6,7 +6,7 @@ import { WebWorker } from "./webWorker/webWorker.js";
 /**
  * Network module containing utility classes for URLs, server requests, and IP addresses.
  * @namespace
- * @property {URL} URL - URL utility class.
+ * @property {URLAwedde} URLAwedde - URL utility class.
  * @property {RequestServer} RequestServer - Class for making server requests.
  * @property {IP} IP - Utility class for handling IP addresses.
  */
@@ -15,7 +15,7 @@ const network = {
      * Utility class for working with URLs.
      * @class
      */
-    URL,
+    URLAwedde,
 
     /**
      * Utility class for making AJAX requests and handling JSONP and Fetch API.
