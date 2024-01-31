@@ -1,11 +1,13 @@
-# Awedde version 1.0.3
+# Awedde version 1.0.4
 
-- Validation upgrade, with enhanced capabilities.
-- Server request update and device storage class.
-- Browser storage manipulation.
-- Working with URL made easy.
+- Using built-in class as a name for the class `URL` caused problem, Now fixed with a new name `URLAwedde`
+- Validation of OTP and Token upgrade.
+- Server request update.
+- Using Detect features class for environment value determination.
+- Merge URL update.
+- Android first then Linux.
 
-# Awedde - Version 1.0.0
+# Awedde
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/ermi111/awedde/releases/tag/v1.0.0)
 
@@ -14,7 +16,7 @@
 </p>
 
 
-Awedde is a versatile collection of utility classes developed to simplify various tasks. It covers a wide range of functionalities, including DOM manipulation, form validation, media handling, network and security operations, and device detection; And other related tasks.
+Awedde is a versatile collection of utility classes developed to simplify various tasks. It covers a wide range of functionalities, including DOM manipulation, form validation, media handling, network and security operations, and device detection; And other related tasks, Works for browser environment
 
 ## Table of Contents
 
@@ -46,46 +48,53 @@ To get started with Awedde, follow the steps below.
 ## Installation
 
 ```bash
-npm install awedde
+# Use this to get the package, Awedde is not for node.js
+
+npm install awedde 
 ```
 
 ## Usage
 
 ```javascript
-// ESmodule
+// Use ESmodule in browser
 // Import the whole Awedde modules
-import awedde from "awedde";
+import awedde from "./path/to/your/awedde-package/awedde.js";
 
 // Import the Awedde modules as needed
-import dom from "awedde";
-import device from "awedde";
-import form from "awedde";
-import media from "awedde";
-import network from "awedde";
+import dom from "./path/to/your/awedde-package/awedde.js";
+import device from "./path/to/your/awedde-package/awedde.js";
+import form from "./path/to/your/awedde-package/awedde.js";
+import media from "./path/to/your/awedde-package/awedde.js";
+import network from "./path/to/your/awedde-package/awedde.js";
 
 const main = awedde.device.DetectDevice.detectOS(); // to detect OS
 console.log(main);
 ```
 
-```javascript
-// Common js
-// Import the whole Awedde modules
-const awedde = require("awedde");
+```HTML 
+<!-- In you html head tag -->
+<script type="module" src="./path/to/your/awedde-package/awedde.js"></script>
 
-// Use Awedde utility functions here
-const main = awedde.default // Use the desired function accordingly, default is required
+<!-- Now use awedde in you body script tag! -->
 
-// For example
-const main = awedde.default.device.DetectDevice.detectBrowser(); // to detect browser type
-console.log(main);
+<!-- For example -->
+<script>
+    const button = document.querySelector('button');
+    awedde.dom.ClassUtility.addClasses(button, 'you-first-class','second-class' /* continue as your need!*/);
+</script>
 ```
 
 ## Modules
 Awedde is organized into the following modules:
+
 dom: DOM manipulation utilities.
+
 form: Form validation and related tasks.
+
 media: Media handling utilities.
+
 network: Network operations.
+
 device: Device detection and device-related tasks.
 
 Documentation is available inline with the code.
@@ -94,6 +103,6 @@ Documentation is available inline with the code.
 I (Ermiyas Arage) welcome contributions from the community. If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
 ## License
-This project is licensed under the Apache-2.0 - see the [LICENSE](LICENSE) file for details.
+Awedde is licensed under the Apache-2.0 License - see the [LICENSE](https://github.com/ermi111/awedde?tab=Apache-2.0-1-ov-file#readme) file for details.
 
 Thank you for choosing Awedde! I hope it simplifies your development tasks and relief stress. If you have any questions or feedback, please reach out to me through [Telegram](https://t.me/ermiyasarage).
