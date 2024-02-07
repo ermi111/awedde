@@ -1,3 +1,4 @@
+# Package is deprecated
 # Awedde version 1.0.4
 
 - Using built-in class as a name for the class `URL` caused problem, Now fixed with a new name `URLAwedde`
